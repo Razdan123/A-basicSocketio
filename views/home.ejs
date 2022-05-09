@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+</head>
+<body>
+    <button onclick="sendMessage1()">Button1</button>
+    <button onclick="sendMessage2()">Button2</button>
+    <button onclick="sendMessage3()">Button3</button>
+    <button onclick="sendMessage4()">Button4</button>
+    <h3></h3>
+
+    <script>
+        const socket = io('http://localhost:3001')
+        socket.on('connection')
+
+        function sendMessage1(){
+            socket.emit('message',"Button 1 is Clicked");
+        };
+        function sendMessage2(){
+            socket.emit('message',"Button 2 is Clicked");
+        };
+        function sendMessage3(){
+            socket.emit('message',"Button 3 is Clicked");
+        };
+        function sendMessage4(){
+            socket.emit('message',"Button 4 is Clicked");
+        };
+    </script>
+</body>
+</html>

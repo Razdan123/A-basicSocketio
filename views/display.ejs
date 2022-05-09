@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+</head>
+<body>
+    <h2></h2>
+
+    <script>
+        const socket = io('http://localhost:3001')
+        socket.on('connection')
+
+        socket.on('message',(data)=>{
+            document.querySelector('h2').innerHTML = data;
+        })
+    </script>
+</body>
+</html>
