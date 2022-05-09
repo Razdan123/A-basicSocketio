@@ -4,14 +4,15 @@
     <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
 </head>
 <body>
-    <h2></h2>
+    <h3>The buttons clicked will be displayed below:-</h3>
+    <ul></ul>
 
     <script>
         const socket = io('http://localhost:3001')
         socket.on('connection')
 
         socket.on('message',(data)=>{
-            document.querySelector('h2').innerHTML = data;
+            document.querySelector('ul').innerHTML += "<li>"+ data + "</li>";
         })
     </script>
 </body>
